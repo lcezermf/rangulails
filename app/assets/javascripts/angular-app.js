@@ -1,6 +1,6 @@
 var app = angular.module('reddit-clone', ['ngRoute', 'ngResource']);
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/posts', {
       templateUrl: '../assets/posts/index.html',
@@ -10,8 +10,7 @@ app.config(['$routeProvider', function($routeProvider) {
       templateUrl: '../assets/main/index.html',
       controller: 'MainIndexCtrl'
     });
-}]);
 
-// app.factory('Posts', function($resource) {
-//   return $resource('/posts:id');
-// });
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+  $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+}]);
