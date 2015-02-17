@@ -6,6 +6,10 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
       templateUrl: '../assets/posts/index.html',
       controller: 'PostsIndexCtrl'
     })
+    .when('/posts/:id', {
+      templateUrl: '../assets/posts/show.html',
+      controller: 'PostsShowCtrl'
+    })
     .otherwise({
       templateUrl: '../assets/main/index.html',
       controller: 'MainIndexCtrl'
