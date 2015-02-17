@@ -1,7 +1,6 @@
 <div ng-repeat="post in posts">
-  <h3>
-    <a ng-click="showPost(post.id)">{{post.title}}</a>
-  </h3>
-  <p>{{post.content}}</p>
+  <post-title></post-title>
+  <post-content></post-content>
+  <a ng-href="#/posts/{{post.id}}">Show</a>
 </div>
 

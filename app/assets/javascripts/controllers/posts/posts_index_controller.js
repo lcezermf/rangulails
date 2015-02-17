@@ -5,8 +5,8 @@ angular.module('reddit-clone').controller('PostsIndexCtrl', ['$scope', 'Posts', 
     $scope.posts = data;
   });
 
-  $scope.showPost = function(id) {
-    $location.url('/posts/' + id);
-  }
+  // $scope.showPost = function(id) {
+  //   $location.url('/posts/' + id);
+  // }
 
 }]);
