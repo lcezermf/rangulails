@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
+  host: localhost
+  pool: 5
+
+development:
+  <<: *default
+  database: reddit-clone_development
+
+test:
+  <<: *default
+  database: reddit-clone_test
+
+production:
+  <<: *default
+  database: reddit-clone_production
+  username: reddit-clone
+  password: <%= ENV['REDDIT-CLONE_DATABASE_PASSWORD'] %>
