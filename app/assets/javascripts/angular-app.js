@@ -2,6 +2,10 @@ var app = angular.module('reddit-clone', ['custom-directives', 'ngRoute', 'ngRes
 
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/posts/new', {
+      templateUrl: '../assets/posts/new.html',
+      controller: 'PostsNewCtrl'
+    })
     .when('/posts', {
       templateUrl: '../assets/posts/index.html',
       controller: 'PostsIndexCtrl'

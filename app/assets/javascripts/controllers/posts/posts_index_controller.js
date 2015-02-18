@@ -1,4 +1,6 @@
-angular.module('reddit-clone').controller('PostsIndexCtrl', ['$scope', 'Posts', '$location', function($scope, Posts, $location){
+angular.module('reddit-clone')
+  .controller('PostsIndexCtrl', ['$scope', 'Posts', '$location', function($scope, Posts, $location){
+
   $scope.posts = [];
 
   Posts.query(function(data){

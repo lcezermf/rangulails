@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.order(id: :desc)
     respond_with @posts
   end
 
@@ -10,9 +10,19 @@ class PostsController < ApplicationController
     respond_with @post
   end
 
-  # private
+  def create
+    @post = Post.new post_params
 
-  # def post_params
-  #   params.require(:post).permit(:title, :content)
-  # end
+    unless @post.save
+      return render text: @post.errors
+    end
+
+    respond_with @post
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
 end

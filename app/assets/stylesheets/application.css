@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+
+.ng-invalid.ng-dirty { border-color: red; }
+.ng-valid.ng-dirty { border-color: green; }
