@@ -1,4 +1,4 @@
-var app = angular.module('reddit-clone', ['ngRoute', 'ngResource']);
+var app = angular.module('reddit-clone', ['custom-directives', 'ngRoute', 'ngResource']);
 
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider
@@ -18,17 +18,3 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
   $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
   $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 }]);
-
-app.directive('postTitle', function(){
-  return {
-    restrict: 'E',
-    templateUrl: '../assets/directives/post_title.html'
-  };
-});
-
-app.directive('postContent', function(){
-  return {
-    restrict: 'E',
-    templateUrl: '../assets/directives/post_content.html'
-  };
-});

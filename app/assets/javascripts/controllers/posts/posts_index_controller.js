@@ -5,6 +5,7 @@ angular.module('reddit-clone').controller('PostsIndexCtrl', ['$scope', 'Posts', 
     $scope.posts = data;
   });
 
+  // Usando ng-href, elimina o uso do ng-click="showPost(post.id)"
   // $scope.showPost = function(id) {
   //   $location.url('/posts/' + id);
   // }
