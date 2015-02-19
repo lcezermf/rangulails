@@ -1,4 +1,4 @@
-angular.module('reddit-clone').factory('Posts', function($resource) {
+angular.module('reddit-clone').factory('Post', function($resource) {
   return $resource('/posts/:id', { id: "@id" },
     {
       'create':  { method: 'POST' },

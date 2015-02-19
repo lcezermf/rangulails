@@ -1,16 +1,16 @@
 angular.module('reddit-clone')
-  .controller('PostsIndexCtrl', ['$scope', 'Posts', '$route', function($scope, Posts, $route){
+  .controller('PostsIndexCtrl', ['$scope', 'Post', '$route', function($scope, Post, $route){
 
   $scope.posts = [];
 
-  Posts.query(function(data){
+  Post.query(function(data){
     $scope.posts = data;
   });
 
   $scope.destroyPost = function(post){
     var confirmation = confirm('Deseja realmente apagar ?');
     if(confirmation) {
-      post.$delete(function(){
+      Post.delete({ id: post.id }, function(){
         $route.reload();
       });
     };

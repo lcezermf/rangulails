@@ -1,7 +1,7 @@
 angular.module('reddit-clone')
-  .controller('PostsShowCtrl', ['$scope', 'Posts', '$routeParams', function($scope, Posts, $routeParams){
+  .controller('PostsShowCtrl', ['$scope', 'Post', '$routeParams', function($scope, Post, $routeParams){
 
-  Posts.get({ id: $routeParams.id }, function(data){
+  Post.get({ id: $routeParams.id }, function(data){
     $scope.post = data;
   });
 
