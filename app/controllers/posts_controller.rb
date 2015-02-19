@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :load_post, only: [:show, :destroy]
+  before_action :load_post, only: [:show, :destroy, :update]
 
   def index
     @posts = Post.order(id: :desc)
@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new post_params
-
     if @post.save
       render json: @post, status: 200
     else
@@ -23,6 +22,14 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     head 204
+  end
+
+  def update
+    if @post.update post_params
+      render json: @post, status: 200
+    else
+      render json: { errors: @post.errors }, status: 422
+    end
   end
 
   private

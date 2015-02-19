@@ -7,10 +7,6 @@ angular.module('reddit-clone')
     $scope.posts = data;
   });
 
-  $scope.hi = function(){
-    console.log('kk')
-  }
-
   $scope.destroyPost = function(post){
     var confirmation = confirm('Deseja realmente apagar ?');
     if(confirmation) {
@@ -19,10 +15,5 @@ angular.module('reddit-clone')
       });
     };
   };
-
-  // Usando ng-href, elimina o uso do ng-click="showPost(post.id)"
-  // $scope.showPost = function(id) {
-  //   $location.url('/posts/' + id);
-  // }
 
 }]);

@@ -15,10 +15,10 @@
             <post-title></post-title>
           </td>
           <td>
-            <a ng-href="#/posts/{{post.id}}">Show</a>
+            <a ng-href="#/posts/{{post.id}}" class='btn btn-primary'>Show</a>
           </td>
           <td>
-            <a ng-click="hi()" class='btn btn-primary'>Edit</a>
+            <a ng-href="#/posts/{{post.id}}/edit" class='btn btn-warning'>Edit</a>
           </td>
           <td>
             <a ng-click="destroyPost(post)" class='btn btn-danger'>Destroy</a>

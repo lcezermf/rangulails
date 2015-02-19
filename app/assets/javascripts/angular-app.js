@@ -14,6 +14,10 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
       templateUrl: '../assets/posts/show.html',
       controller: 'PostsShowCtrl'
     })
+    .when('/posts/:id/edit', {
+      templateUrl: '../assets/posts/edit.html',
+      controller: 'PostsEditCtrl'
+    })
     .otherwise({
       templateUrl: '../assets/main/index.html',
       controller: 'MainIndexCtrl'

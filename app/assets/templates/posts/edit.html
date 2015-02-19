@@ -1,7 +1,7 @@
 <div class="row">
   <div class='col-sm-12'>
     <div class='well'>
-      <form class='form-horizontal' name='newPost' ng-submit='newPost.$valid && createPost(post)' novalidate>
+      <form class='form-horizontal' name='newPost' ng-submit='newPost.$valid && updatePost(post)' novalidate>
         <div class='form-group'>
           <div class='col-md-12'>
             <input value="{{post.title}}" class='form-control' placeholder='Title' type='text' ng-model='post.title' required/>
