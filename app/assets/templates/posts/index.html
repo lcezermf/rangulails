@@ -17,8 +17,12 @@
           <td>
             <a ng-href="#/posts/{{post.id}}">Show</a>
           </td>
-          <td>HE</td>
-          <td>HE</td>
+          <td>
+            <a ng-click="hi()" class='btn btn-primary'>Edit</a>
+          </td>
+          <td>
+            <a ng-click="destroyPost(post)" class='btn btn-danger'>Destroy</a>
+          </td>
         </tr>
       </tbody>
     </table>
